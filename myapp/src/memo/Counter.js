@@ -8,7 +8,7 @@ const Counter = () => {
     }
 
     const decrease = () => {
-        setNumber(num - 1);
+        setNumber((num) => num - 1);
     }
 
     return (

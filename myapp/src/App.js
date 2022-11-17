@@ -7,6 +7,8 @@ import About from "./memo/About";
 import Counter from "./memo/Counter";
 import Input from "./memo/Input";
 import Input2 from "./memo/Input2";
+import Exp from "./memo/Exp";
+import UserList from "./memo/List";
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
             <Link to="/Counter">Counter</Link>
             <Link to="/Input">Input</Link>
             <Link to="/Input2">Input2</Link>
+            <Link to="/Exp">Exp</Link>
+            <Link to="/UserList">UserList</Link>
         </nav>
         <Routes>
             <Route path="/" element={<Home />}/>
@@ -24,6 +28,8 @@ function App() {
             <Route path="/Counter" element={<Counter />}/>
             <Route path="/Input" element={<Input />}/>
             <Route path="/Input2" element={<Input2 />}/>
+            <Route path="/Exp" element={<Exp />}/>
+            <Route path="/UserList" element={<UserList />}/>
         </Routes>
     </div>
   );
