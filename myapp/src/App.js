@@ -9,6 +9,7 @@ import Input from "./memo/Input";
 import Input2 from "./memo/Input2";
 import Exp from "./memo/Exp";
 import UserList from "./memo/List";
+import InsertMemo from "./memo/InsertMemo";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Link to="/Input2">Input2</Link>
             <Link to="/Exp">Exp</Link>
             <Link to="/UserList">UserList</Link>
+            <Link to="/InsertMemo">InsertMemo</Link>
         </nav>
         <Routes>
             <Route path="/" element={<Home />}/>
@@ -30,6 +32,7 @@ function App() {
             <Route path="/Input2" element={<Input2 />}/>
             <Route path="/Exp" element={<Exp />}/>
             <Route path="/UserList" element={<UserList />}/>
+            <Route path="/InsertMemo" element={<InsertMemo />}/>
         </Routes>
     </div>
   );
