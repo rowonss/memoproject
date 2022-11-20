@@ -8,9 +8,8 @@ import Counter from "./memo/Counter";
 import Input from "./memo/Input";
 import Input2 from "./memo/Input2";
 import Exp from "./memo/Exp";
-import UserList from "./memo/List";
+import MemoList from "./memo/MemoList";
 import InsertMemo from "./memo/InsertMemo";
-
 
 function App() {
 
@@ -18,14 +17,8 @@ function App() {
 
     <div className="App">
         <nav>
-            <Link to="/">Home</Link>
-            <Link to="/about">about</Link>
-            <Link to="/Counter">Counter</Link>
-            <Link to="/Input">Input</Link>
-            <Link to="/Input2">Input2</Link>
-            <Link to="/Exp">Exp</Link>
-            <Link to="/UserList">UserList</Link>
-            <Link to="/InsertMemo">InsertMemo</Link>
+            <Link to="/MemoList">메모 목록</Link>
+            <Link to="/InsertMemo">새 메모</Link>
         </nav>
         <Routes>
             <Route path="/" element={<Home />}/>
@@ -34,7 +27,7 @@ function App() {
             <Route path="/Input" element={<Input />}/>
             <Route path="/Input2" element={<Input2 />}/>
             <Route path="/Exp" element={<Exp />}/>
-            <Route path="/UserList" element={<UserList />}/>
+            <Route path="/MemoList" element={<MemoList />}/>
             <Route path="/InsertMemo" element={<InsertMemo />}/>
         </Routes>
     </div>

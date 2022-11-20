@@ -32,7 +32,7 @@ app.post('/Insert', (req, res) => {
 
 app.get('/MEMO', (req, res) => {
 
-    db.query("select * from memo", (err, data) => {
+    db.query("select * from memo order by num DESC ", (err, data) => {
         if (!err) {
             res.send(data)
             console.log(data)

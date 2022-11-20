@@ -15,9 +15,35 @@ body {
 }
 
 .App>nav{
+  text-decoration: none;
+  font-family: 'LINESeedKR-Bd';
   text-align: center;
   margin : 0 auto;
   display: block;
+}
+
+.App{
+  margin-top: 50px;
+  border-radius: 10px;
+  margin-left :auto;
+  margin-right: auto;
+  width: 350px;
+  border: solid #7C7877 3px;
+  background-color: #9baec8;
+}
+
+.App>nav>a{
+  background-color: #ABD0CE;
+  padding: 5px;
+  border-radius: 8px;
+  border: solid #F0E5DE;
+  color: #7C7877;
+  text-decoration: none;
+}
+
+.App>nav>a:hover{
+  transition: background-color 330ms;
+  background-color: #D9D4CF;
 }
 
 code {
@@ -34,16 +60,19 @@ code {
 }
 
 .memobox{
+  margin-top: 30px;
   border-radius: 5px;
   padding-top: 10px;
   padding-bottom: 10px;
-  margin : 0 auto;
+  margin-left :auto;
+  margin-right: auto;
   display: block;
   width: 320px;
   background-color: #7C7877;
 }
 
 .savebutton{
+  background-color: #D9D4CF;
   width: 50px;
   height: 30px;
   font-family: "LINESeedKR-Bd";
@@ -56,7 +85,47 @@ code {
 
 .savebutton:hover{
   transition: background-color 330ms;
-  background-color: #D9D4CF;
+  background-color: #ABD0CE;
+}
+
+.MemoListBox_div_main {
+  margin-bottom: 10px;
+  display: grid;
+  grid-template-columns: 25px 5px auto  5px 110px;
+}
+
+.MemoListBox_div_main>div:hover{
+  transition: background-color 330ms;
+  background-color: #ABD0CE;
+}
+
+.MemoListBox_div_num{
+  background-color: #F0E5DE;
+  color: #7C7877;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-family: "LINESeedKR-Bd";
+  text-align: center;
+  border-radius: 5px;
+  border: solid #D9D4CF 3px;
+}
+.MemoListBox_div_title{
+  background-color: #F0E5DE;
+  color: #7C7877;
+  border-radius: 5px;
+  padding: 5px;
+  font-family: "LINESeedKR-Bd";
+  border: solid #D9D4CF 3px;
+}
+.MemoListBox_div_date{
+  background-color: #F0E5DE;
+  color: #7C7877;
+  border-radius: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-family: "LINESeedKR-Bd";
+  text-align: center;
+  border: solid #D9D4CF 3px;
 }
 
 .title{
@@ -71,6 +140,19 @@ code {
   margin-bottom: 10px;
   display: block;
   width: 300px;
+}
+
+.MemoListBox{
+  margin-top: 30px;
+  margin-left :auto;
+  margin-right: auto;
+  width: 350px;
+}
+
+.MemoListBox>ul{
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
 }
 
 textarea{
