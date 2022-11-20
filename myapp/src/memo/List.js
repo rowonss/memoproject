@@ -4,7 +4,8 @@ import axios from "axios";
 
 const Memos = ({memodata}) => {
     return (
-        <tr>
+        <tr key={memodata}>
+            <td>{memodata.num}</td>
             <td>{memodata.title}</td>
             <td>{memodata.date}</td>
         </tr>
@@ -30,6 +31,7 @@ const UserList = () => {
         <table>
             <thead>
             <tr>
+                <th>번호</th>
                 <th>제목</th>
                 <th>날짜</th>
             </tr>
