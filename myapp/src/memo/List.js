@@ -1,33 +1,49 @@
-import React from "react";
+import React, {useState} from "react";
+import {useEffect} from "react";
+import axios from "axios";
 
-const User = ({userData}) => {
+const Memos = ({memodata}) => {
     return (
         <tr>
-            <td>{userData.name}</td>
-            <td>{userData.email}</td>
+            <td>{memodata.num}</td>
+            <td>{memodata.title}</td>
+            <td>{memodata.text}</td>
+            <td>{memodata.date}</td>
         </tr>
     )
 }
 
+
 const UserList = () => {
-    const users = [
-        {email: 'user1@gmail.com', name: 'jonggi'},
-        {email: 'usser13@gmail.com', name: 'dd'},
-        {email: 'ss@gmail.com', name: 'ss'},
-        {email: 'zz@gmail.com', name: 'zz'},
-        {email: 'zzasd@gmail.com', name: 'zzasd'}
-    ]
+
+    const [memo,setmemo] = useState({arr:[]});
+
+    useEffect(()=>{
+        setmemo({arr: []})
+    }, [])
+
+    const selectAll = async () => {
+        //데이터가 전부 들어올 때까지 기다린다 - 비동기
+        let memodata = (await axios.get('/MEMO')).data
+
+        setmemo({arr:memodata})
+
+    }
+
+
 
     return (
         <table>
             <thead>
             <tr>
-                <th>이름</th>
-                <th>이메일</th>
+                <th>번호</th>
+                <th>제목</th>
+                <th>내용</th>
+                <th>날짜</th>
             </tr>
             </thead>
             <tbody>
-            {users.map(user => <User userData={user}/>)}
+            {memo.arr.map(memo => <Memos memodata={memo}/>)}
             </tbody>
         </table>
     )

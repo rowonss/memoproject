@@ -1,8 +1,9 @@
 var mysql = require('mysql');
 const db = mysql.createPool({
-    host : 'localhost:3306',
+    host : 'localhost',
     user : 'root',
     password : 'rlak1k2k3',
-    database : 'memo'
+    database : 'memo',
+    port : '3306'
 });
 module.exports = db;

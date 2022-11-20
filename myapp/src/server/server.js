@@ -11,9 +11,10 @@ app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
 })
 
-app.get('/movie',(req,res) => {
-    db.query("select * from 'movie'", (err,data) => {
+app.get('/MEMO',(req,res) => {
+    db.query("select * from memo", (err,data) => {
         if(!err){
+            res.send(data)
             console.log(data)
         }
         else{

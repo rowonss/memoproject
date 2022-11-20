@@ -15,12 +15,6 @@ import InsertMemo from "./memo/InsertMemo";
 
 function App() {
 
-    // 서버에서 받은 데이터를 console로 찍어서 확인한다.
-    const selectAll = () => {
-        alert("selectAll")
-        axios.get('/movie')
-    }
-
   return (
 
     <div className="App">
@@ -33,7 +27,6 @@ function App() {
             <Link to="/Exp">Exp</Link>
             <Link to="/UserList">UserList</Link>
             <Link to="/InsertMemo">InsertMemo</Link>
-            <button onClick={selectAll}></button>
         </nav>
         <Routes>
             <Route path="/" element={<Home />}/>
