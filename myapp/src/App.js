@@ -18,7 +18,7 @@ function App() {
     // 서버에서 받은 데이터를 console로 찍어서 확인한다.
     const selectAll = () => {
         alert("selectAll")
-        axios.get('localhost:3306/movies')
+        axios.get('/movie')
     }
 
   return (
