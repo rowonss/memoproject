@@ -94,7 +94,12 @@ code {
   grid-template-columns: 25px 5px auto  5px 110px;
 }
 
-.MemoListBox_div_main>div:hover{
+/*.MemoListBox_div_main>div:hover{*/
+/*  transition: background-color 330ms;*/
+/*  background-color: #ABD0CE;*/
+/*}*/
+
+.MemoListBox_div_title:hover{
   transition: background-color 330ms;
   background-color: #ABD0CE;
 }
@@ -110,6 +115,7 @@ code {
   border: solid #D9D4CF 3px;
 }
 .MemoListBox_div_title{
+  text-decoration: none;
   background-color: #F0E5DE;
   color: #7C7877;
   border-radius: 5px;

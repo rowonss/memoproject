@@ -42,3 +42,20 @@ app.get('/MEMO', (req, res) => {
         }
     })
 })
+
+app.get('/GetMemo',(req, res)=>{
+    let memonum = req.query.get_num;
+    let values = memonum["num"];
+
+    const sql = "select * from memo where num ="+values;
+
+    db.query(sql,(err,data) => {
+        if (!err) {
+            res.send(data)
+            console.log(data)
+        } else {
+            console.log("에러야")
+            console.log(err)
+        }
+    })
+})
