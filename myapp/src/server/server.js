@@ -59,3 +59,22 @@ app.get('/GetMemo',(req, res)=>{
         }
     })
 })
+
+app.delete('/DeleteMemo',(req,res)=>{
+    let memonum = req.query.del_num;
+    let values = memonum["num"];
+
+    const sql = "delete from memo where num="+values;
+
+    db.query(sql,(err,data)=>{
+        if (!err) {
+            res.send(data)
+            console.log(data)
+        } else {
+            console.log("에러야")
+            console.log(err)
+        }
+    })
+
+
+})

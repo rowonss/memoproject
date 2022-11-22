@@ -1,13 +1,7 @@
 
-import React, {useEffect} from "react";
+import React from "react";
 import {Routes, Route, Link} from "react-router-dom";
 
-import Home from "./memo/Home";
-import About from "./memo/About";
-import Counter from "./memo/Counter";
-import Input from "./memo/Input";
-import Input2 from "./memo/Input2";
-import Exp from "./memo/Exp";
 import MemoList from "./memo/MemoList";
 import InsertMemo from "./memo/InsertMemo";
 import GetMemo from "./memo/GetMemo";

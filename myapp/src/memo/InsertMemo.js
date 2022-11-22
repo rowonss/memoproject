@@ -31,7 +31,7 @@ const InsertMemo = () => {
     return (
         <div>
             <div className="memobox">
-                <input className="title" type="text" placeholder="제목" onChange={onChangetitle}/>
+                <input className="inserttitle" type="text" placeholder="제목" onChange={onChangetitle}/>
                 <textarea placeholder="내용을 입력해주세요" onChange={onChangecontent}/>
                 <button className="savebutton" onClick={newMemo}>저장</button>
             </div>

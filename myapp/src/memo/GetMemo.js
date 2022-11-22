@@ -1,50 +1,76 @@
 import axios from "axios";
-import { useParams } from "react-router-dom";
-import React, {useState} from "react";
-import {useEffect} from "react";
+import {useParams} from "react-router-dom";
+import React, {useEffect, useState} from "react";
 
 const GetMemo = () => {
-
-    const [title, settitle] = useState("");
-
-    const onChangetitle = (e) => {
-        settitle(e.target.value)
-    }
-    const [content, setcontent] = useState("");
-
-    const onChangecontent = (e) => {
-        setcontent(e.target.value)
-    }
 
     const num = useParams();
 
     const [gotmemo, setgotmemo] = useState({arr:[]});
 
-    const setting = () => {
-        if(gotmemo.length > 0){
-            settitle(gotmemo[0]["title"]);
-            setcontent(gotmemo[0]["text"]);
-        }
-    }
-
     const getting = async () => {
         const gotmemodata = await axios.get('/GetMemo', {params:{get_num : num}
         })
         setgotmemo(gotmemodata.data)
-        setting();
     }
 
     useEffect(() => {
         getting();
     }, [])
 
+    let title;
+    let content;
+
+    if(gotmemo.length > 0){
+        title = gotmemo[0]["title"];
+        content = gotmemo[0]["text"];
+    }
+
+    const useConfirm = (message = null, onConfirm, onCancel) => {
+        if (!onConfirm || typeof onConfirm !== "function") {
+            return;
+        }
+        if (onCancel && typeof onCancel !== "function") {
+            return;
+        }
+
+        return () => {
+            if (window.confirm(message)) {
+                onConfirm();
+            } else {
+                onCancel();
+            }
+        };
+    };
+
+    const deleteConfirm = () => deleteMemo()
+    const cancelConfirm = () => console.log("취소했습니다")
+
+    const confirmDelete = useConfirm(
+        "삭제하시겠습니까?",
+        deleteConfirm,
+        cancelConfirm
+    );
+
+    const deleteMemo = () => {
+        axios.delete('/DeleteMemo',{params :{del_num : num}})
+            .then(res => {
+                console.log(res.data)
+                alert("메모 삭제가 완료되었습니다.")
+                document.location.href = '/MemoList'
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
+    }
 
     return (
         <div>
             <div className="getmemobox">
-                <input className="title" value={title} type="text" onChange={onChangetitle}/>
-                <textarea value={content} onChange={onChangecontent}/>
-                <button className="savebutton" >저장</button>
+                <div className="viewtitle"><div>{title}</div></div>
+                <div className="viewcontent"><div>{content}</div></div>
+                <button className="updatebutton" >수정</button>
+                <button className="deletebutton" onClick={confirmDelete} >삭제</button>
             </div>
         </div>
     )
